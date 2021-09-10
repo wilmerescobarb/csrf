@@ -67,5 +67,11 @@ app.post('/edit', login, (req, res) => {
     res.send('Email cambiado');
 })
 
+
+app.get('/logout', login, (req, res)=>{
+    req.session.destroy();
+    res.send('Sesión finalizada')
+})
+
 //Server
 app.listen(PORT, () => console.warn('Listening on Port', PORT));
